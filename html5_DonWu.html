@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* CSS for top nav */
+#home {
+  color: red;
+}
+
+#topNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+  opacity: 30%;
+}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {
+  background-color: #111;
+  text-decoration: underline;
+  -moz-text-decoration-color: red; /* Code for Firefox */
+  text-decoration-color: red;
+}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+/* CSS for mainPage */
+#mainPage {
+  width: 100%;
+  height: 980px;
+  margin-top: 50px;  
+  background: url('img/Chicago0.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+#title0 {
+  visibility: hidden;
+}
+
+#title {
+  margin-top: 300px;  
+}
+
+#navRight {
+  margin-top: 300px;  
+  float: right;
+  width: 250px;
+  text-align: right;
+  margin-right: 50px;
+}
+
+#navRight li {
+  list-style-type: none;
+  color: white;
+}
+
+#liBa, #liCRa, #liEa, #liHDa, #liSSa, #liCSa, #liEDa, #liHa {
+  color: red;
+  visibility: hidden;
+}
+
+#sessionLeft {
+  margin-left: 50px;
+}
+
+#sessionLeft h2, h4, h5 {
+  color: white;
+}
+
+#divBar {
+  color: red;
+  font-size: 2em;
+}
+
+#sessionBottom {
+  margin-top: 400px;  
+  float: bottom;
+  text-align: center;
+}
+
+#sessionBottom p {
+  color: white;
+}
+
+@media screen and (max-width:680px) {
+  #mainPage {
+    display: none;
+  }
+}
+
+/* CSS for News */
+#newsgrp1 {
+  width: 100%;
+}
+
+#newsgrp2 {
+  clear: both;
+}
+
+.news {
+  float: left;
+  width: 30%;
+  padding: 10px; 
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width:680px) {
+  .news {
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<ul id="topNav" class="topnav">
+  <li><a href="http://www.cityofchicago.org/city/en/about.html">About</a></li>
+  <li><a href="http://www.cityofchicago.org/city/en/svcs/find.html">Services</a></li>
+  <li><a id="home" class="active" href="#">CHICAGO</a></li>
+  <li><a href="http://www.cityofchicago.org/city/en/chicagogovt.html">Government</a></li>
+  <li><a href="http://www.cityofchicago.org/city/en/progs.html">Programs</a></li>
+  <li class="icon"><a href="#" onclick="showHideMenu()">MENU</a>
+  </li>
+</ul>
+
+<div id="mainPage">
+
+  <nav id="navRight">
+    <ul>
+      <li id="liB" class="lis" onclick="addbar1()"><a>Business</a><span id="liBa" class="nds">&ndash;</span></li>
+      <li id="liCR" class="lis" onclick="addbar2()"><a>Culture & Recreation</a><span id="liCRa" class="nds">&ndash;</span></li>
+      <li id="liE" class="lis" onclick="addbar3()"><a>Environment</a><span id="liEa" class="nds">&ndash;</span></li>
+      <li id="liHD" class="lis" onclick="addbar4()"><a>Housing & Development</a><span id="liHDa" class="nds">&ndash;</span></li>
+      <li id="liSS" class="lis" onclick="addbar5()"><a>Social Services</a><span id="liSSa" class="nds">&ndash;</span></li>
+      <li id="liCS" class="lis" onclick="addbar6()"><a>Civic Services</a><span id="liCSa" class="nds">&ndash;</span></li>
+      <li id="liED" class="lis" onclick="addbar7()"><a>Education</a><span id="liEDa" class="nds">&ndash;</span></li>
+      <li id="liH" class="lis" onclick="addbar8()"><a>Health</a><span id="liHa" class="nds">&ndash;</span></li>
+    </ul>
+  </nav>
+
+  <section id="sessionLeft">
+    <h2 id="title0">Welcome to Chicago</h2>
+    <h2 id="title">Windy City Chicago</h2>
+    <p><span id="divBar">&mdash;</span></p>
+    <h5 id="subtitle">Place for business opportunities</h5>
+  </section>
+
+  <section id="sessionBottom">
+    <h4>Scroll down for news</h4>
+  </section>
+</div>
+
+<div id="newsgrp1">
+
+  <section class="news">
+    <img src="img/pic1.jpg">
+    <h2>Natutal Resources</h2>
+    <small>Posted on <time datetime="2016-05-20">May 20, 2016</time></small>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+  </section>
+
+  <section class="news">
+    <img src="img/pic2.jpg">
+    <h2>Business News</h2>
+    <small>Posted on <time datetime="2016-05-20">May 20, 2016</time></small>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+  </section>
+
+  <section class="news">
+    <img src="img/pic3.jpg">
+    <h2>Journey to Mars</h2>
+    <small>Posted on <time datetime="2016-05-20">May 20, 2016</time></small>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+  </section>
+</div>
+
+<div id="newsgrp2">
+  <section class="news">
+    <img src="img/pic1.jpg">
+    <h2>Natutal Resources</h2>
+    <small>Posted on <time datetime="2016-05-20">May 20, 2016</time></small>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+  </section>
+
+  <section class="news">
+    <img src="img/pic2.jpg">
+    <h2>Business News</h2>
+    <small>Posted on <time datetime="2016-05-20">May 20, 2016</time></small>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+  </section>
+
+  <section class="news">
+    <video width="320" height="240" controls>
+      <source src="video/mov_bbb.mp4" type="video/mp4">
+    </video>
+
+    <h2>Journey to Mars</h2>
+    <small>Posted on <time datetime="2016-05-20">May 20, 2016</time></small>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.</p>
+  </section>
+</div>
+
+<script>
+  function showHideMenu() {
+    document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+  }
+
+  function reset() {
+    var elements = document.getElementsByClassName('nds');
+    var i;
+    for(i = 0; i < elements.length; i++)
+    {
+      elements[i].style.visibility='hidden';
+    }    
+
+    elements = document.getElementsByClassName('lis');
+    for(i = 0; i < elements.length; i++)
+    {
+      elements[i].style.fontWeight='normal';
+    }    
+  }
+
+  function addbar1 () {
+    reset();
+    document.getElementById('liB').style.fontWeight='bold';
+    document.getElementById('liBa').style.visibility='visible';
+
+    document.getElementById('title').innerHTML = "Business in Chicago";
+    document.getElementById('subtitle').innerHTML = "More About Business in Chicago...";
+    document.getElementById('mainPage').style.background='url("img/Chicago1.jpg") center center no-repeat';
+  }
+
+  function addbar2 () {
+    reset();
+    document.getElementById('liCR').style.fontWeight='bold';
+    document.getElementById('liCRa').style.visibility='visible';
+
+    document.getElementById('title').innerHTML = "Culture & Recreation in Chicago";
+    document.getElementById('subtitle').innerHTML = "More About Culture & Recreation in Chicago...";
+    document.getElementById('mainPage').style.background='url("img/Chicago2.jpg") center center no-repeat';
+  }
+
+  function addbar3 () {
+    reset();
+    document.getElementById('liE').style.fontWeight='bold';
+    document.getElementById('liEa').style.visibility='visible';
+
+    document.getElementById('title').innerHTML = "Environment in Chicago";
+    document.getElementById('subtitle').innerHTML = "More About Environment in Chicago...";
+    document.getElementById('mainPage').style.background='url("img/Chicago3.jpg") center center no-repeat';
+  }
+
+  function addbar4 () {
+    reset();
+    document.getElementById('liHD').style.fontWeight='bold';
+    document.getElementById('liHDa').style.visibility='visible';
+
+    document.getElementById('title').innerHTML = "Housing & Development in Chicago";
+    document.getElementById('subtitle').innerHTML = "More About Housing & Development in Chicago...";
+    document.getElementById('mainPage').style.background='url("img/Chicago4.jpg") center center no-repeat';
+  }
+
+  function addbar5 () {
+    reset();
+    document.getElementById('liSS').style.fontWeight='bold';
+    document.getElementById('liSSa').style.visibility='visible';
+
+    document.getElementById('title').innerHTML = "Social Services in Chicago";
+    document.getElementById('subtitle').innerHTML = "More About Social Services in Chicago...";
+    document.getElementById('mainPage').style.background='url("img/Chicago5.jpg") center center no-repeat';
+  }
+
+  function addbar6 () {
+    reset();
+    document.getElementById('liCS').style.fontWeight='bold';
+    document.getElementById('liCSa').style.visibility='visible';
+
+    document.getElementById('title').innerHTML = "Civic Services in Chicago";
+    document.getElementById('subtitle').innerHTML = "More About Civic Services in Chicago...";
+    document.getElementById('mainPage').style.background='url("img/Chicago6.jpg") center center no-repeat';
+  }
+
+  function addbar7 () {
+    reset();
+    document.getElementById('liED').style.fontWeight='bold';
+    document.getElementById('liEDa').style.visibility='visible';
+
+    document.getElementById('title').innerHTML = "Education in Chicago";
+    document.getElementById('subtitle').innerHTML = "More About Education in Chicago...";
+    document.getElementById('mainPage').style.background='url("img/Chicago7.jpg") center center no-repeat';
+  }
+
+  function addbar8 () {
+    reset();
+    document.getElementById('liH').style.fontWeight='bold';
+    document.getElementById('liHa').style.visibility='visible';
+
+    document.getElementById('title').innerHTML = "Health in Chicago";
+    document.getElementById('subtitle').innerHTML = "More About Health in Chicago...";
+    document.getElementById('mainPage').style.background='url("img/Chicago8.jpg") center center no-repeat';
+  }
+</script>
+
+</body>
+</html>
+
